@@ -319,26 +319,41 @@ main {
 
 .copy-btn {
     position: absolute;
+
     right: 8px;
     top: 50%;
+
     transform: translateY(-50%);
+
     display: flex;
     align-items: center;
-    justify-content: center;
+
     gap: 6px;
-    width: 82px;
+
     height: 40px;
-    padding: 0;
+
+    padding: 0 14px;
+
     border-radius: 10px;
+
     border: 1px solid var(--border-color);
+
     background: var(--bg-elevated-solid);
+
     color: var(--text-secondary);
+
     font-family: var(--font-sans);
+
     font-size: 0.76rem;
+
     font-weight: 700;
+
     letter-spacing: 0.05em;
+
     cursor: pointer;
+
     transition: all var(--transition-fast);
+
     flex-shrink: 0;
 }
 
