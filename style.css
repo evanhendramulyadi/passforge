@@ -952,6 +952,7 @@ footer {
     }
 
     footer {
-        padding: 16px 16px 12px;
+        margin-top: 12px;
+        padding: 36px 16px 12px;
     }
 }
