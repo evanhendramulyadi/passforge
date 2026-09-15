@@ -937,24 +937,21 @@ footer {
 }
 
 @media (max-width: 767px) {
+    body {
+        justify-content: center;
+        min-height: 100svh;
+    }
+
     .page {
-        padding: 28px 16px 16px;
+        flex: none;
+        padding: 24px 16px 0;
     }
 
-    header.site-header {
-        margin-bottom: 24px;
-    }
-
-    .brand-badge {
-        margin-bottom: 12px;
-    }
-
-    .card {
-        padding: 20px;
-        gap: 18px;
+    main {
+        flex: none;
     }
 
     footer {
-        padding: 18px 16px 8px;
+        padding: 16px 16px 12px;
     }
 }
