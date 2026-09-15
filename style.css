@@ -1,0 +1,954 @@
+/* ============================================================
+   ROOT VARIABLES — Cybersecurity / Minimalist SaaS Palette
+   ============================================================ */
+
+:root {
+    --bg-primary: #080D18;
+    --bg-secondary: #0D1424;
+    --bg-card: #111A2B;
+    --bg-elevated-solid: #162135;
+
+    --border-color: #24324A;
+    --border-color-light: #2E3A52;
+    --border-color-strong: #354862;
+
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+
+    --primary: #3B82F6;
+    --primary-hover: #60A5FA;
+    --primary-soft: rgba(59, 130, 246, 0.14);
+
+    --cyan: #22D3EE;
+    --cyan-soft: rgba(34, 211, 238, 0.14);
+
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+
+    --strength-weak: #EF4444;
+    --strength-medium: #F59E0B;
+    --strength-strong: #22C55E;
+    --strength-vstrong: #22D3EE;
+
+    --radius-lg: 18px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+
+    --shadow-elevated:
+        0 24px 48px -16px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+
+    --shadow-soft:
+        0 8px 20px -8px rgba(0, 0, 0, 0.45);
+
+    --transition-fast:
+        150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    --transition-medium:
+        250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    --font-mono:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        Courier,
+        monospace;
+
+    --font-sans:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: dark;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 20% -10%,
+            rgba(59, 130, 246, 0.10),
+            transparent 45%),
+        radial-gradient(circle at 85% 15%,
+            rgba(34, 211, 238, 0.06),
+            transparent 40%),
+        var(--bg-primary);
+
+    background-attachment: fixed;
+
+    color: var(--text-primary);
+
+    font-family: var(--font-sans);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    line-height: 1.5;
+
+    -webkit-font-smoothing: antialiased;
+
+    position: relative;
+}
+
+
+/* ============================================================
+   CIRCUIT-LIKE GRID
+   ============================================================ */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(148, 163, 184, 0.035) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(148, 163, 184, 0.035) 1px,
+            transparent 1px);
+
+    background-size: 44px 44px;
+
+    mask-image:
+        radial-gradient(circle at 50% 0%,
+            black,
+            transparent 65%);
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+
+.page {
+    width: 100%;
+    max-width: 560px;
+
+    padding: 56px 20px 32px;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .page {
+        padding-top: 72px;
+    }
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+header.site-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.brand-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 25%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+.brand-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 25%;
+}
+
+.site-header h1 {
+    font-size: clamp(1.8rem, 5.5vw, 2.3rem);
+
+    font-weight: 800;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+
+    color: var(--text-primary);
+}
+
+.site-header p {
+    color: var(--text-secondary);
+
+    font-size: 0.98rem;
+
+    font-weight: 400;
+}
+
+
+/* ============================================================
+   MAIN CARD
+   ============================================================ */
+
+main {
+    flex: 1;
+}
+
+.card {
+    position: relative;
+
+    background: rgba(17, 26, 43, 0.72);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-elevated);
+
+    padding: 26px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+@media (min-width: 480px) {
+    .card {
+        padding: 32px;
+    }
+}
+
+
+/* ============================================================
+   PASSWORD DISPLAY
+   ============================================================ */
+
+.password-display {
+    position: relative;
+
+    background: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-md);
+
+    padding: 20px 58px 20px 20px;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 74px;
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.password-display:focus-within {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px var(--primary-soft);
+}
+
+#passwordOutput {
+    width: 100%;
+
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    color: var(--text-primary);
+
+    font-family: var(--font-mono);
+
+    font-size: clamp(1.02rem, 4.2vw, 1.3rem);
+
+    letter-spacing: 0.5px;
+
+    word-break: break-all;
+
+    line-height: 1.4;
+
+    caret-color: var(--primary);
+}
+
+#passwordOutput::selection {
+    background: var(--primary-soft);
+}
+
+#passwordOutput::placeholder {
+    color: var(--text-muted);
+
+    font-family: var(--font-sans);
+
+    letter-spacing: normal;
+
+    font-size: 0.92rem;
+}
+
+
+/* ============================================================
+   COPY BUTTON
+   ============================================================ */
+
+.copy-btn {
+    position: absolute;
+
+    right: 8px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    height: 40px;
+
+    padding: 0 14px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border-color);
+
+    background: var(--bg-elevated-solid);
+
+    color: var(--text-secondary);
+
+    font-family: var(--font-sans);
+
+    font-size: 0.76rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+
+    transition: all var(--transition-fast);
+
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    color: var(--text-primary);
+
+    border-color: var(--primary);
+
+    background: var(--primary-soft);
+}
+
+.copy-btn:active {
+    transform:
+        translateY(-50%) scale(0.94);
+}
+
+.copy-btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.copy-btn svg {
+    width: 15px;
+    height: 15px;
+
+    stroke: currentColor;
+
+    flex-shrink: 0;
+}
+
+.copy-btn .icon-check {
+    display: none;
+    stroke: var(--success);
+}
+
+.copy-btn.copied .icon-copy {
+    display: none;
+}
+
+.copy-btn.copied .icon-check {
+    display: block;
+}
+
+.copy-btn.copied {
+    border-color: var(--success);
+
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    color: var(--success);
+}
+
+.copy-btn .copy-label::after {
+    content: "COPY";
+}
+
+.copy-btn.copied .copy-label::after {
+    content: "COPIED";
+}
+
+
+/* ============================================================
+   COPIED TOAST
+   ============================================================ */
+
+.copied-toast {
+    position: absolute;
+
+    right: 8px;
+    top: -13px;
+
+    background: var(--success);
+
+    color: #052e12;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    padding: 3px 10px;
+
+    border-radius: 999px;
+
+    opacity: 0;
+
+    transform:
+        translateY(4px) scale(0.9);
+
+    transition:
+        opacity var(--transition-fast),
+        transform var(--transition-fast);
+
+    pointer-events: none;
+
+    letter-spacing: 0.03em;
+}
+
+.copied-toast.show {
+    opacity: 1;
+
+    transform:
+        translateY(0) scale(1);
+}
+
+
+/* ============================================================
+   STRENGTH METER
+   ============================================================ */
+
+.strength-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.strength-track {
+    height: 8px;
+
+    border-radius: 999px;
+
+    background: var(--bg-elevated-solid);
+
+    border: 1px solid var(--border-color);
+
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+
+    width: 0%;
+
+    border-radius: 999px;
+
+    background: var(--strength-weak);
+
+    transition:
+        width var(--transition-medium),
+        background var(--transition-medium);
+}
+
+.strength-row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 0.78rem;
+}
+
+.strength-row span:first-child {
+    color: var(--text-muted);
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+
+    font-weight: 600;
+}
+
+#strengthLabel {
+    font-weight: 800;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+
+    transition:
+        color var(--transition-fast);
+}
+
+
+/* ============================================================
+   LENGTH SLIDER
+   ============================================================ */
+
+.option-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.length-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: baseline;
+
+    font-size: 0.82rem;
+
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+
+    font-weight: 600;
+}
+
+#lengthValue {
+    color: var(--primary-hover);
+
+    font-family: var(--font-mono);
+
+    font-weight: 700;
+
+    font-size: 1rem;
+
+    background: var(--primary-soft);
+
+    padding: 2px 10px;
+
+    border-radius: 8px;
+
+    border: 1px solid rgba(59, 130, 246, 0.3);
+
+    min-width: 40px;
+
+    text-align: center;
+
+    letter-spacing: normal;
+
+    text-transform: none;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    height: 6px;
+
+    border-radius: 999px;
+
+    background: var(--bg-elevated-solid);
+
+    outline: none;
+
+    cursor: pointer;
+
+    border: 1px solid var(--border-color);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    border: 3px solid #fff;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 8px rgba(59, 130, 246, 0.5);
+
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-fast);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.12);
+    background: var(--primary-hover);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    border: 3px solid #fff;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 8px rgba(59, 130, 246, 0.5);
+
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-fast);
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.12);
+    background: var(--primary-hover);
+}
+
+input[type="range"]:focus-visible {
+    box-shadow:
+        0 0 0 3px var(--primary-soft);
+}
+
+
+/* ============================================================
+   CHECKBOX OPTIONS
+   ============================================================ */
+
+.options-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+@media (max-width: 380px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.option-toggle {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    background: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-sm);
+
+    padding: 12px 14px;
+
+    cursor: pointer;
+
+    transition:
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+
+    user-select: none;
+}
+
+.option-toggle:hover {
+    border-color: var(--border-color-strong);
+}
+
+.option-toggle:has(input:checked) {
+    border-color: var(--primary);
+
+    background: var(--primary-soft);
+}
+
+.option-toggle input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 19px;
+    height: 19px;
+
+    min-width: 19px;
+
+    border-radius: 6px;
+
+    border: 1.5px solid var(--border-color-strong);
+
+    background: var(--bg-elevated-solid);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition: all var(--transition-fast);
+
+    flex-shrink: 0;
+}
+
+.option-toggle input[type="checkbox"]:checked {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.option-toggle input[type="checkbox"]:checked::after {
+    content: "";
+
+    position: absolute;
+
+    left: 5.5px;
+    top: 2px;
+
+    width: 5px;
+    height: 9px;
+
+    border: solid #fff;
+
+    border-width: 0 2px 2px 0;
+
+    transform: rotate(45deg);
+}
+
+.option-toggle input[type="checkbox"]:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.option-toggle .option-text {
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.25;
+}
+
+.option-toggle .option-title {
+    font-size: 0.88rem;
+
+    font-weight: 600;
+
+    color: var(--text-primary);
+}
+
+.option-toggle .option-sample {
+    font-size: 0.72rem;
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+}
+
+
+/* ============================================================
+   GENERATE BUTTON
+   ============================================================ */
+
+.generate-btn {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border: none;
+
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(135deg,
+            var(--primary),
+            #2563EB);
+
+    color: #fff;
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.generate-btn:hover {
+    background:
+        linear-gradient(135deg,
+            var(--primary-hover),
+            var(--primary));
+
+    box-shadow:
+        0 10px 26px -8px rgba(59, 130, 246, 0.55);
+
+    transform: translateY(-1px);
+}
+
+.generate-btn:active {
+    transform:
+        scale(0.98) translateY(0);
+}
+
+.generate-btn:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.generate-btn svg {
+    width: 17px;
+    height: 17px;
+
+    stroke: currentColor;
+
+    transition:
+        transform var(--transition-medium);
+}
+
+.generate-btn.spin svg {
+    transform: rotate(180deg);
+}
+
+
+/* ============================================================
+   WARNING
+   ============================================================ */
+
+.options-warning {
+    font-size: 0.78rem;
+
+    color: var(--danger);
+
+    text-align: center;
+
+    min-height: 16px;
+
+    opacity: 0;
+
+    transition:
+        opacity var(--transition-fast);
+}
+
+.options-warning.show {
+    opacity: 1;
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+    text-align: center;
+
+    padding: 28px 20px 12px;
+
+    color: var(--text-muted);
+
+    font-size: 0.76rem;
+
+    width: 100%;
+
+    max-width: 560px;
+}
+
+
+/* ============================================================
+   VISUALLY HIDDEN
+   ============================================================ */
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
