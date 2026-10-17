@@ -5,162 +5,171 @@
 <h1 align="center">PassForge</h1>
 
 <p align="center">
-  <strong>Generator kata sandi modern bergaya cybersecurity untuk menghasilkan kata sandi acak yang kuat, aman, dan instan langsung di peramban.</strong>
+  <strong>A modern, cybersecurity-themed client-side password generator engineered for cryptographically secure, true-random password generation directly in your browser.</strong>
+</p>
+
+<p align="center">
+  <a href="https://passforge-site.vercel.app" target="_blank"><strong>🌐 Live Demo: passforge-site.vercel.app</strong></a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-HTML5%20%7C%20CSS3%20%7C%20JavaScript-blue?style=flat-square" alt="Tech Stack">
   <img src="https://img.shields.io/badge/Security-Web%20Crypto%20API-00b4d8?style=flat-square" alt="Security CSPRNG">
   <img src="https://img.shields.io/badge/Dependencies-Zero-success?style=flat-square" alt="Zero Dependencies">
+  <img src="https://img.shields.io/badge/Deployment-Vercel-black?style=flat-square&logo=vercel" alt="Vercel Deployment">
   <img src="https://img.shields.io/badge/Copyright-All%20Rights%20Reserved-red?style=flat-square" alt="All Rights Reserved">
 </p>
 
 ---
 
-## 📌 Tentang PassForge
+## 📌 Overview
 
-**PassForge** adalah aplikasi web berbasis *client-side* murni yang dirancang untuk membuat kata sandi (*password*) dengan tingkat keacakan kriptografis tinggi secara cepat dan andal. Mengusung antarmuka visual bertema *cybersecurity / dark minimalist SaaS*, PassForge menggabungkan estetika profesional dengan standar keamanan informasi modern.
+**PassForge** is a high-performance, standalone, client-side web application designed to generate cryptographically robust passwords with uniform randomness. Embracing a refined dark cybersecurity SaaS aesthetic, PassForge pairs professional UI design with industry-standard cryptographic techniques.
 
-Seluruh proses pembuatan kata sandi berjalan 100% pada memori lokal di peramban (*browser*) pengguna tanpa melibatkan server latar belakang (*zero backend*), panggilan API eksternal, maupun transmisi jaringan. Hal ini menjamin privasi penuh dan meminimalkan risiko intersepsi data (*man-in-the-middle*).
-
----
-
-## ✨ Fitur Unggulan
-
-### 🔐 Keamanan Kriptografi (Cryptographic Security)
-- **CSPRNG (Cryptographically Secure Pseudo-Random Number Generator)**: Menggunakan `window.crypto.getRandomValues()` bawaan peramban alih-alih `Math.random()` standar, memanfaatkan *entropy* perangkat keras sistem operasi untuk keacakan sejati.
-- **Bebas Modulo Bias (*Rejection Sampling*)**: Mengimplementasikan algoritma *rejection sampling* pada fungsi acak untuk mengeliminasi bias distribusi statistik saat memetakan deret biner ke rentang karakter.
-- **Secure Fisher-Yates Shuffle**: Pengacakan urutan akhir karakter dilakukan menggunakan algoritma Fisher-Yates yang ditenagai langsung oleh generator bilangan acak kriptografis.
-- **Jaminan Komposisi Karakter**: Memastikan minimal 1 karakter dari setiap kategori yang aktif (huruf besar, huruf kecil, angka, simbol) pasti disertakan dalam kata sandi yang dihasilkan.
-- **Privasi Sisi Klien Penuh**: Bebas penyimpanan *cookie*, *local storage*, analitik pihak ketiga, atau transmisi jaringan.
-
-### ⚙️ Fleksibilitas & Kontrol Pengguna
-- **Rentang Panjang Fleksibel**: Slider interaktif dengan batas panjang dari **4** hingga **64** karakter (standar bawaan: 16 karakter).
-- **Kombinasi Karakter Komprehensif**:
-  - **Uppercase**: Huruf kapital (`A–Z`)
-  - **Lowercase**: Huruf kecil (`a–z`)
-  - **Numbers**: Angka (`0–9`)
-  - **Symbols**: Karakter simbol khusus (`!@#$%^&*()_+-=[]{}|;:,.<>?/~```)
-- **Validasi Anti-Kosong Otomatis**: Mencegah seluruh opsi karakter dinonaktifkan secara bersamaan, memastikan selalu ada minimal satu set karakter yang aktif.
-
-### 🎨 Antarmuka & Aksesibilitas Modern
-- **Indikator Kekuatan Kata Sandi (*Real-Time Strength Meter*)**: Evaluasi kekuatan kata sandi secara instan berdasarkan panjang dan keragaman karakter ke dalam 4 kategori (*Weak*, *Medium*, *Strong*, *Very Strong*) dengan indikator warna visual dan progress bar dinamis.
-- **Salin Sekali Klik (*One-Click Copy*)**: Tombol salin ke papan klip (*clipboard*) yang dilengkapi transisi status visual, indikator ikon centang, dan *toast notification* responsif. Dilengkapi mekanisme *fallback* (`document.execCommand`) untuk memastikan fungsionalitas tetap berjalan pada berbagai lingkungan peramban.
-- **Pintasan Keyboard**: Menekan tombol `Enter` pada kolom tampilan kata sandi akan memicu pembuatan kata sandi baru secara instan.
-- **Desain Responsif & Tema Gelap**: Tata letak modern dengan efek *glassmorphism* (`backdrop-filter`), palet warna kontras tinggi, dan adaptasi sempurna untuk desktop, tablet, maupun ponsel cerdas.
-- **Ramah Aksesibilitas (*A11y*)**: Mengimplementasikan atribut ARIA semantik (`aria-live`, `aria-label`, `aria-valuemin`, `aria-valuemax`, `aria-valuenow`, dan `role="alert"`) untuk kenyamanan pengguna pembaca layar (*screen reader*).
+Password generation takes place 100% in-memory within the client's browser. With zero server backends, zero external API queries, and zero tracking scripts, PassForge ensures total user privacy and complete protection against network interception.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## 🌐 Live Deployment
 
-- **HTML5**: Struktur semantik berstandar W3C dan ramah aksesibilitas.
-- **CSS3**: Sistem tata letak modern (*Flexbox* & *CSS Grid*), variabel CSS (*Custom Properties*), dan efek visual *glassmorphism*.
-- **JavaScript (ES6+)**: Logika modular yang dienkapsulasi menggunakan pola *Immediately Invoked Function Expression* (IIFE) dengan mode ketat (*strict mode*), tanpa ketergantungan pada pustaka (*library*) atau *framework* pihak ketiga (*zero dependencies*).
-- **Web Crypto API**: Antarmuka standar peramban modern untuk operasi kriptografis berkecepatan tinggi dan berkeamanan tinggi.
+The application is deployed on Vercel and available globally:
+- **Live URL**: [https://passforge-site.vercel.app](https://passforge-site.vercel.app)
+- **Deployment Platform**: Vercel (Edge Network)
+- **Build Configuration**: Zero build step required (Static HTML/CSS/JS)
 
 ---
 
-## 📁 Struktur Berkas
+## ✨ Key Features
+
+### 🔐 Cryptographic Security
+- **Hardware-Backed CSPRNG**: Leverages `window.crypto.getRandomValues()` instead of pseudo-random generators like `Math.random()`, sourcing high-entropy randomness directly from the operating system kernel.
+- **Modulo Bias Elimination via Rejection Sampling**: Implements rejection sampling algorithm to eliminate statistical skew when mapping raw bytes to character ranges, ensuring true uniform distribution across all character sets.
+- **Secure Fisher-Yates Shuffle**: The final character array is permuted using an in-place Fisher-Yates shuffle powered exclusively by the secure CSPRNG.
+- **Guaranteed Category Inclusion**: Automatically guarantees that at least one character from each active character set (uppercase, lowercase, numbers, symbols) is included in the resulting password.
+- **Zero Data Leakage**: No cookies, no `localStorage`, no remote analytics, and zero external network transmissions.
+
+### ⚙️ User Customization & Controls
+- **Configurable Password Length**: An interactive range slider spanning from **4** to **64** characters (default: 16 characters).
+- **Granular Character Categories**:
+  - **Uppercase**: Capital letters (`A–Z`)
+  - **Lowercase**: Small letters (`a–z`)
+  - **Numbers**: Decimal digits (`0–9`)
+  - **Symbols**: Punctuation and special characters (`!@#$%^&*()_+-=[]{}|;:,.<>?/~```)
+- **Safety Enforcement**: Automatically prevents disabling all character categories at once to avoid invalid states, alerting the user with a temporary warning notification.
+
+### 🎨 Modern Interface & Accessibility
+- **Real-Time Password Strength Meter**: Evaluates password strength dynamically based on length thresholds and character entropy across 4 levels (*Weak*, *Medium*, *Strong*, *Very Strong*) with smooth visual color transitions and animated progress feedback.
+- **One-Click Clipboard Copy with Fallback**: Features quick copying with visual state transition, animated checkmark icon, and a responsive toast confirmation. Includes a seamless legacy fallback (`document.execCommand`) to maintain functionality across all browser contexts.
+- **Keyboard Shortcut**: Pressing `Enter` while focused on the password output field instantly regenerates a new password.
+- **Cybersecurity Glassmorphism Design**: High-contrast dark palette with backdrop blur effects, subtle circuit grid styling, and fully responsive layout optimized for mobile, tablet, and desktop viewports.
+- **Screen Reader Accessible (A11y)**: Semantic HTML with ARIA live regions (`aria-live="polite"`), descriptive labels (`aria-label`), and range attributes (`aria-valuemin`, `aria-valuemax`, `aria-valuenow`).
+
+---
+
+## 🛠️ Tech Stack
+
+- **HTML5**: Semantic W3C-compliant document structure and accessibility markup.
+- **CSS3**: Modern layout architecture utilizing Flexbox, CSS Grid, Custom Properties (CSS variables), and glassmorphism filters.
+- **JavaScript (ES6+)**: Modular code wrapped in an Immediately Invoked Function Expression (IIFE) running under strict mode (`"use strict"`), engineered with zero external libraries or dependencies.
+- **Web Crypto API**: Native browser cryptographic interface providing cryptographically secure pseudo-random numbers.
+
+---
+
+## 📁 Project Structure
 
 ```
 passforge/
 ├── img/
-│   └── logo-passforge.png    # Aset logo aplikasi dan favicon
-├── index.html                # Struktur halaman web dan antarmuka pengguna
-├── script.js                 # Logika generator CSPRNG, pengacakan, dan interaktivitas
-├── style.css                 # Desain tata letak, palet cybersecurity, dan responsivitas
-└── README.md                 # Dokumentasi resmi proyek
+│   └── logo-passforge.png    # Brand badge logo and application favicon
+├── index.html                # Main semantic HTML structure and markup
+├── script.js                 # CSPRNG engine, shuffle logic, and UI interactions
+├── style.css                 # Cybersecurity theme, component styles, and responsiveness
+└── README.md                 # Project documentation and usage guidelines
 ```
 
 ---
 
-## 💻 Persyaratan & Cara Menjalankan
+## 💻 Getting Started
 
-PassForge dibangun murni dengan teknologi web standar peramban, sehingga tidak memerlukan instalasi Node.js, package manager (`npm`/`yarn`/`pnpm`), atau tahapan kompilasi/build.
+Because PassForge is built strictly using standard web technologies, no build pipeline, compiler, or package manager (`npm`, `yarn`, `pnpm`) is required.
 
-### Prasyarat
-Peramban web modern yang mendukung Web Crypto API (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera, atau peramban modern lainnya).
+### Prerequisites
+A modern web browser supporting the Web Crypto API (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera, Brave, etc.).
 
-### Langkah Menjalankan
+### Local Setup Instructions
 
-#### 1. Kloning Repositori
+#### 1. Clone the Repository
 ```bash
 git clone https://github.com/evanhendramulyadi/passforge.git
 cd passforge
 ```
 
-#### 2. Membuka Aplikasi
-Pilih salah satu metode berikut:
+#### 2. Run the Application
 
-- **Buka Langsung Berkas**:
-  Klik dua kali berkas `index.html` pada pengelola berkas (File Explorer pada Windows, Finder pada macOS, atau berkas manajer Linux).
+You can run PassForge using any of the following methods:
 
-- **Menggunakan Ekstensi VS Code (Live Server)**:
-  Buka folder proyek di Visual Studio Code, klik kanan berkas `index.html`, lalu pilih **Open with Live Server**.
+- **Direct File Opening**:
+  Double-click `index.html` in your system file manager (Windows File Explorer, macOS Finder, or Linux file manager) to open it directly in your browser.
 
-- **Menggunakan Python Local Server**:
+- **VS Code Live Server Extension**:
+  Open the project directory in Visual Studio Code, right-click `index.html`, and select **Open with Live Server**.
+
+- **Python HTTP Server**:
   ```bash
+  # Python 3
   python -m http.server 3000
   ```
-  Lalu buka peramban dan navigasikan ke `http://localhost:3000`.
+  Then navigate to `http://localhost:3000` in your web browser.
 
-- **Menggunakan Node.js (Opsional)**:
+- **Node.js Serve (Optional)**:
   ```bash
   npx serve .
   ```
 
 ---
 
-## 📖 Panduan Penggunaan
+## 📖 How to Use
 
-1. Buka aplikasi PassForge pada peramban web Anda.
-2. Tentukan panjang kata sandi yang diinginkan dengan menggeser slider **Password Length** (rentang 4 hingga 64 karakter).
-3. Tentukan variasi karakter yang diinginkan dengan mencentang kotak opsi (**Uppercase**, **Lowercase**, **Numbers**, **Symbols**).
-4. Klik tombol **Generate Password** atau tekan tombol **Enter** pada kolom kata sandi.
-5. Perhatikan indikator **Password Strength** untuk melihat tingkat kekuatan kata sandi yang dihasilkan.
-6. Klik tombol **Copy** di samping kolom kata sandi untuk menyalin hasilnya ke papan klip (*clipboard*). Notifikasi "Copied!" akan muncul sebagai konfirmasi.
-
----
-
-## ⚙️ Konfigurasi Lingkungan & Keamanan Data
-
-- **Tanpa File Konfigurasi Rahasia**: Aplikasi ini murni berjalan di sisi peramban pengguna (*client-side*). Tidak memerlukan berkas `.env`, kunci API (*API key*), token autentikasi, basis data, maupun kredensial server.
-- **Zero Data Leakage**: Tidak ada pelacakan analitik, tidak ada transmisi data ke internet, dan tidak ada penyimpanan data ke *storage* peramban.
+1. Open PassForge in your preferred browser.
+2. Adjust the **Password Length** slider to your desired character count (between 4 and 64).
+3. Toggle character sets (**Uppercase**, **Lowercase**, **Numbers**, **Symbols**) to match your specific requirements.
+4. Click **Generate Password** or press `Enter` in the password field to produce a new password.
+5. Check the **Password Strength** meter for an instant entropy assessment.
+6. Click **Copy** to copy the generated password to your clipboard.
 
 ---
 
-## 🚀 Informasi Deployment
+## 🛡️ Security Architecture
 
-PassForge dapat di-deploy secara instan ke platform penyedia *static site hosting* mana pun tanpa konfigurasi build khusus:
+### Why Not `Math.random()`?
+Standard JavaScript `Math.random()` implementations rely on non-cryptographic pseudo-random number generators (PRNGs) such as *xorshift128+*. These algorithms are optimized for speed and graphical simulations rather than cryptographic resilience. Given a sequence of outputs, an attacker can determine the internal PRNG state and predict subsequent values.
 
-- **GitHub Pages**: Cukup aktifkan GitHub Pages dari tab Settings repositori pada cabang `main`.
-- **Vercel / Netlify / Cloudflare Pages**: Hubungkan repositori langsung tanpa konfigurasi perintah build (*build command: none*, *publish directory: root*).
-- **Web Server Tradisional**: Tempatkan seluruh berkas (`index.html`, `style.css`, `script.js`, dan folder `img/`) ke direktori publik server web (Nginx, Apache, atau Caddy).
-
----
-
-## 🛡️ Analisis Algoritma Keamanan
-
-### Mengapa Bukan `Math.random()`?
-Fungsi `Math.random()` pada JavaScript umumnya diimplementasikan dengan generator bilangan acak semu (PRNG) seperti *xorshift128+*. Algoritma ini dirancang untuk kecepatan eksekusi grafis atau simulasi, bukan untuk keamanan. Keadaan internalnya (*internal state*) dapat ditebak jika penyerang mengamati sejumlah deret output acak sebelumnya.
-
-### Solusi yang Diterapkan PassForge:
-1. **Entropi Kriptografis (`crypto.getRandomValues`)**: Mengambil sumber keacakan langsung dari modul CSPRNG sistem operasi (misalnya `/dev/urandom` pada sistem berbasis Unix atau `CryptGenRandom` / `BCryptGenRandom` pada Windows).
-2. **Eliminasi Modulo Bias melalui *Rejection Sampling***:
-   Jika ruang bilangan biner $256$ dibagi dengan ukuran alfabet target $N$, sisa pembagian ($256 \pmod N$) dapat menyebabkan nilai tertentu memiliki probabilitas kemunculan lebih tinggi jika hanya menggunakan operator modulus langsung (`byte % N`). PassForge menentukan batas tertinggi yang habis dibagi $N$ (`maxUsable`) dan membuang (*reject & resample*) setiap byte yang berada di atas batas tersebut, memastikan distribusi seragam sejati (*true uniform distribution*).
-3. **Fisher-Yates Shuffle Berkeamanan Tinggi**: Karakter hasil pembangkitan diacak kembali posisinya satu per satu menggunakan penukaran indeks yang ditenagai oleh CSPRNG untuk menghilangkan pola posisi bawaan.
+### The PassForge Implementation:
+1. **Cryptographic Entropy**: PassForge retrieves random bytes directly from the host system's cryptographic random generator (`crypto.getRandomValues()`), drawing from `/dev/urandom` on Unix-like operating systems or `BCryptGenRandom` on Windows.
+2. **Rejection Sampling (Modulo Bias Elimination)**:
+   When mapping random 8-bit integers ($[0, 255]$) into an alphabet of size $N$, standard modulo operations (`byte % N`) cause smaller remainder values to appear with slightly higher frequency whenever $256$ is not evenly divisible by $N$. PassForge calculates the largest multiple of $N$ strictly less than or equal to 256 (`maxUsable`) and rejects (resamples) any byte outside this threshold, ensuring a mathematically proven uniform distribution.
+3. **Cryptographic Fisher-Yates Shuffle**: All generated characters are shuffled via the Fisher-Yates algorithm, using the CSPRNG for index selections to prevent positional patterns.
 
 ---
 
-## 📄 Hak Cipta, Kepemilikan & Ketentuan Penggunaan
+## ⚙️ Environment & Configuration
 
-© 2026 Evan Hendra Mulyadi. All Rights Reserved.
+- **Zero Configuration**: No `.env` files, build scripts, or secret tokens are needed.
+- **Client-Side Execution**: All processing occurs strictly within the local browser context.
+- **Privacy Assurance**: No secrets, passwords, or usage telemetry are logged or transmitted.
 
-### Ketentuan Repositori Publik
-Repositori ini disediakan secara publik dengan tujuan transparansi, edukasi, pembelajaran, dan sebagai referensi teknis mengenai pembuatan aplikasi web vanilla dengan standar kriptografi modern.
+---
 
-- **Pembelajaran & Referensi**: Anda dipersilakan untuk melihat, meninjau, menguji, dan mempelajari arsitektur kode sumber proyek ini untuk keperluan pembelajaran pribadi maupun penelitian.
-- **Bukan Hak Cipta Bebas Salin (*No Plagiarism/Rebranding*)**: Akses publik terhadap repositori ini **tidak memberikan izin** untuk menduplikasi seluruh proyek secara mentah-mentah, mengubah nama/merek (*rebranding*), lalu mengklaim karya ini sebagai buatan sendiri.
-- **Atribusi & Penghormatan Karya Orisinal**: Apabila Anda mengambil inspirasi konsep atau mengadaptasi bagian logika tertentu untuk proyek Anda, harap sertakan atribusi yang jelas kepada pencipta aslinya. Membuat proyek serupa secara mandiri dari awal (*scratch*) untuk tujuan belajar sangat dihargai dan tidak dilarang.
+## 📄 Copyright & Terms of Use
+
+© 2026 Evan. All Rights Reserved.
+
+### Intellectual Property & Repository Guidelines
+This project is an original creation by **Evan**.
+
+This repository is maintained publicly for the purpose of transparency, portfolio display, technical study, and peer review of client-side cryptographic web development practices:
+
+- **Review & Learning**: You are welcome to view, inspect, test, and learn from the source code and architectural patterns for individual study and research.
+- **No Plagiarism or Unauthorized Rebranding**: Public visibility does not grant permission to duplicate the project, remove original attributions, rename or rebrand the software, and falsely claim authorship.
+- **Usage & Redistribution**: Any reuse, adaptation, or derivative work must respect the creator's copyright and applicable terms. Re-implementing similar cryptographic concepts independently from scratch for educational purposes is welcomed and encouraged.
 

@@ -20,31 +20,23 @@
 
         <!-- ================= HEADER ================= -->
         <header class="site-header">
-
             <div class="brand-badge">
                 <img src="img/logo-passforge.png" alt="PassForge Logo">
             </div>
 
             <h1>PassForge</h1>
-
             <p>Generate strong passwords in seconds.</p>
-
         </header>
-
 
         <!-- ================= MAIN CONTENT ================= -->
         <main>
-
             <section class="card" aria-labelledby="generatorHeading">
-
                 <h2 class="visually-hidden" id="generatorHeading">
                     Password Generator Tool
                 </h2>
 
-
                 <!-- Generated password display + copy -->
                 <div class="password-display">
-
                     <label for="passwordOutput" class="visually-hidden">
                         Generated password
                     </label>
@@ -57,11 +49,9 @@
                     </span>
 
                     <button class="copy-btn" id="copyBtn" type="button" aria-label="Copy password to clipboard">
-
                         <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
                             <rect x="9" y="9" width="13" height="13" rx="2"></rect>
-
                             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                         </svg>
 
@@ -71,35 +61,24 @@
                         </svg>
 
                         <span class="copy-label"></span>
-
                     </button>
-
                 </div>
-
 
                 <!-- Strength indicator -->
                 <div class="strength-section" aria-live="polite">
-
                     <div class="strength-track">
                         <div class="strength-fill" id="strengthFill"></div>
                     </div>
 
                     <div class="strength-row">
-
                         <span>Password Strength</span>
-
                         <span id="strengthLabel">—</span>
-
                     </div>
-
                 </div>
-
 
                 <!-- Length slider -->
                 <div class="option-block">
-
                     <div class="length-header">
-
                         <label for="lengthSlider">
                             Password Length
                         </label>
@@ -107,131 +86,88 @@
                         <span id="lengthValue">
                             16
                         </span>
-
                     </div>
 
                     <input type="range" id="lengthSlider" min="4" max="64" value="16" step="1"
                         aria-label="Password length" aria-valuemin="4" aria-valuemax="64" aria-valuenow="16">
-
                 </div>
-
 
                 <!-- Character options -->
                 <div class="option-block">
-
                     <div class="options-grid" role="group" aria-label="Character type options">
-
                         <label class="option-toggle">
-
                             <input type="checkbox" id="optUppercase" checked>
-
                             <span class="option-text">
-
                                 <span class="option-title">
                                     Uppercase
                                 </span>
-
                                 <span class="option-sample">
                                     A–Z
                                 </span>
-
                             </span>
-
                         </label>
 
-
                         <label class="option-toggle">
-
                             <input type="checkbox" id="optLowercase" checked>
-
                             <span class="option-text">
-
                                 <span class="option-title">
                                     Lowercase
                                 </span>
-
                                 <span class="option-sample">
                                     a–z
                                 </span>
-
                             </span>
-
                         </label>
 
-
                         <label class="option-toggle">
-
                             <input type="checkbox" id="optNumbers" checked>
-
                             <span class="option-text">
-
                                 <span class="option-title">
                                     Numbers
                                 </span>
-
                                 <span class="option-sample">
                                     0–9
                                 </span>
-
                             </span>
-
                         </label>
 
-
                         <label class="option-toggle">
-
                             <input type="checkbox" id="optSymbols" checked>
-
                             <span class="option-text">
-
                                 <span class="option-title">
                                     Symbols
                                 </span>
-
                                 <span class="option-sample">
                                     !@#$%^&*
                                 </span>
-
                             </span>
-
                         </label>
-
                     </div>
-
 
                     <p class="options-warning" id="optionsWarning" role="alert">
                         At least one character type must be selected.
                     </p>
-
                 </div>
-
 
                 <!-- Generate button -->
                 <button class="generate-btn" id="generateBtn" type="button">
-
                     <svg id="generateIcon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <polyline points="23 4 23 10 17 10"></polyline>
                         <polyline points="1 20 1 14 7 14"></polyline>
                         <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
                     </svg>
-
                     Generate Password
-
                 </button>
-
             </section>
-
         </main>
 
     </div>
-
 
     <!-- ================= FOOTER ================= -->
     <footer>
         © 2026–Present Evan Hendra Mulyadi. All Rights Reserved.
     </footer>
-
 
     <script src="script.js"></script>
 
