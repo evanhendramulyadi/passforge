@@ -170,7 +170,7 @@ header.site-header {
     justify-content: center;
     width: 56px;
     height: 56px;
-    border-radius: 25%;
+    border-radius: 20%;
     overflow: hidden;
     margin-bottom: 20px;
     box-shadow: var(--shadow-soft);
@@ -181,7 +181,7 @@ header.site-header {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 25%;
+    border-radius: 20%;
 }
 
 .site-header h1 {
