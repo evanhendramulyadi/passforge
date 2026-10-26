@@ -2,7 +2,7 @@
   <img src="img/logo-passforge.png" alt="PassForge Logo" width="100">
 </p>
 
-<h1 align="center">PassForge</h1>
+<h1 align="left">PassForge</h1>
 
 PassForge is a sleek, cybersecurity-themed client-side password generator web application designed to create cryptographically secure, randomized passwords instantly in your browser.
 
