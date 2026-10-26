@@ -1,0 +1,44 @@
+Copyright (c) 2026 Evan Hendra Mulyadi. All rights reserved.
+
+PASSFORGE — PROPRIETARY LICENSE
+
+1. OWNERSHIP
+
+PassForge is a client-side password generator web application created by Evan Hendra Mulyadi. The original source code, interface design, layout, original written content, and other project materials are protected by applicable intellectual property laws to the extent such rights are owned by the respective rights holders.
+
+This notice does not claim ownership of browser technologies, JavaScript language features, the Web Crypto API, or other technologies and materials that belong to their respective owners.
+
+2. PERMITTED ACCESS
+
+This repository is publicly accessible for viewing, studying, and reviewing its source code. Public availability does not, by itself, grant permission to reproduce, modify, redistribute, republish, or commercially exploit protected original project materials.
+
+3. RESTRICTIONS
+
+Unless prior written permission has been obtained from the applicable rights holder, you may not, to the extent permitted by applicable law:
+
+* Copy or redistribute the project or substantial portions of its protected original source code or design.
+* Modify, adapt, or create derivative works from protected project materials.
+* Republish, sublicense, sell, or commercially exploit protected project materials without authorization.
+* Rebrand or rename the original project in a way that falsely implies ownership or authorization.
+* Falsely claim authorship or ownership of the project or materials created by another person.
+* Remove or alter applicable copyright, attribution, or proprietary notices without authorization.
+
+4. THIRD-PARTY MATERIALS
+
+Any third-party libraries, frameworks, fonts, icons, images, assets, or other external materials incorporated into or used by PassForge remain subject to their respective licenses, permissions, and terms.
+
+This license does not claim ownership of third-party materials or override the rights of their respective copyright holders.
+
+5. SECURITY DISCLAIMER
+
+PassForge is provided for password generation and informational purposes. Although the application is designed to use browser cryptographic functionality, no guarantee is made that the application is suitable for every security-sensitive environment or that its use will prevent unauthorized access, data loss, or other security incidents.
+
+Users are responsible for evaluating their own security requirements and ensuring that their browser and device are appropriately secured. This disclaimer does not exclude or limit any liability that cannot lawfully be excluded or limited under applicable law.
+
+6. LEGAL RIGHTS
+
+Nothing in this notice is intended to override, limit, or restrict rights or exceptions granted by applicable law or any valid license governing third-party materials.
+
+7. PERMISSION REQUESTS
+
+Requests for permission to use, reproduce, modify, or distribute protected original PassForge project materials must be directed to Evan Hendra Mulyadi, subject to the rights of any other applicable rights holders. Prior written consent must be obtained before such use unless otherwise permitted by applicable law or an applicable third-party license.
