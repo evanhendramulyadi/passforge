@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/logo-passforge.png" alt="PassForge Logo" width="100">
+  <img src="img/passforge-logo.png" alt="PassForge Logo" width="100">
 </p>
 
 <h1 align="left">PassForge</h1>
